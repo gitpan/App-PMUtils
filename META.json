@@ -34,6 +34,7 @@
             "Perinci::CmdLine" : "1.04",
             "SHARYANTO::Complete::Util" : "0.04",
             "SHARYANTO::Module::Path" : "0",
+            "String::ShellQuote" : "0",
             "perl" : "5.010001"
          }
       },
@@ -58,7 +59,7 @@
          "web" : "https://github.com/sharyanto/perl-App-PMUtils"
       }
    },
-   "version" : "0.03",
+   "version" : "0.04",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.018002"

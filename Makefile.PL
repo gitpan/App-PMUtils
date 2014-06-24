@@ -33,7 +33,8 @@ my %WriteMakefileArgs = (
     "Log::Any" => 0,
     "Perinci::CmdLine" => "1.04",
     "SHARYANTO::Complete::Util" => "0.04",
-    "SHARYANTO::Module::Path" => 0
+    "SHARYANTO::Module::Path" => 0,
+    "String::ShellQuote" => 0
   },
   "TEST_REQUIRES" => {
     "File::Spec" => 0,
@@ -41,7 +42,7 @@ my %WriteMakefileArgs = (
     "IPC::Open3" => 0,
     "Test::More" => 0
   },
-  "VERSION" => "0.03",
+  "VERSION" => "0.04",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -57,6 +58,7 @@ my %FallbackPrereqs = (
   "Perinci::CmdLine" => "1.04",
   "SHARYANTO::Complete::Util" => "0.04",
   "SHARYANTO::Module::Path" => 0,
+  "String::ShellQuote" => 0,
   "Test::More" => 0
 );
 
