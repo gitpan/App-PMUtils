@@ -10,9 +10,14 @@ our $DATE = '2014-06-24'; # DATE
 our $VERSION = '0.03'; # VERSION
 
 our %SPEC;
-$SPEC{pmless} = {
+$SPEC{pmman} = {
     v => 1.1,
-    summary => 'Show Perl module source code with `less`',
+    summary => 'Show manpage of Perl module',
+    description => <<'_',
+
+This function is essentially `man MODNAME`, but offers command-line completion.
+
+_
     args => {
         module => {
             schema => 'str*',
@@ -34,27 +39,23 @@ $SPEC{pmless} = {
         },
     },
     deps => {
-        prog => 'less',
+        prog => 'man',
     },
 };
-sub pmless {
+sub pmman {
     require SHARYANTO::Module::Path;
     my %args = @_;
     my $mod = $args{module};
-    my $mpath = SHARYANTO::Module::Path::module_path(
-        module => $mod, find_pmc=>0, find_pod=>0, find_prefix=>0);
-    if (defined $mpath) {
-        system "less", $mpath;
-        [200, "OK"];
-    } else {
-        [404, "Can't find module $mod"];
-    }
+    $mod =~ s!/!::!g;
+    my @cmd = ("man", $mod);
+    exec @cmd;
+    # [200]; # unreachable
 }
 
-Perinci::CmdLine->new(url => '/main/pmless')->run;
+Perinci::CmdLine->new(url => '/main/pmman')->run;
 
-# ABSTRACT: Show Perl module source code with `less`
-# PODNAME: pmless
+# ABSTRACT: Show manpage of Perl module
+# PODNAME: pmman
 
 __END__
 
@@ -64,22 +65,22 @@ __END__
 
 =head1 NAME
 
-pmless - Show Perl module source code with `less`
+pmman - Show manpage of Perl module
 
 =head1 VERSION
 
-This document describes version 0.03 of pmless (from Perl distribution App-PMUtils), released on 2014-06-24.
+This document describes version 0.03 of pmman (from Perl distribution App-PMUtils), released on 2014-06-24.
 
 =head1 SYNOPSIS
 
 Basic usage:
 
- % pmless Some::Module
+ % pmman Some::Module
 
 To active bash completion:
 
- % complete -C pmpath pmpath ; # can be put in bash startup file e.g. .bashrc
- % pmpath Some<tab>
+ % complete -C pmman pmman ; # can be put in bash startup file e.g. .bashrc
+ % pmman Some<tab>
 
 =head1 KNOWN ISSUES
 

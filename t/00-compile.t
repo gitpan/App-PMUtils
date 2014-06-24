@@ -4,7 +4,7 @@ use warnings;
 
 # this test was generated with Dist::Zilla::Plugin::Test::Compile 2.039
 
-use Test::More  tests => 7 + ($ENV{AUTHOR_TESTING} ? 1 : 0);
+use Test::More  tests => 9 + ($ENV{AUTHOR_TESTING} ? 1 : 0);
 
 
 
@@ -14,9 +14,11 @@ my @module_files = (
 
 my @scripts = (
     'bin/pmcost',
+    'bin/pmdoc',
     'bin/pmedit',
     'bin/pminfo',
     'bin/pmless',
+    'bin/pmman',
     'bin/pmpath',
     'bin/podpath'
 );

@@ -7,9 +7,11 @@ META.yml
 Makefile.PL
 README
 bin/pmcost
+bin/pmdoc
 bin/pmedit
 bin/pminfo
 bin/pmless
+bin/pmman
 bin/pmpath
 bin/podpath
 dist.ini

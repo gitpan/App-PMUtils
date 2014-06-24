@@ -2,7 +2,7 @@ NAME
     App::PMUtils - Command line to manipulate Perl module files
 
 VERSION
-    This document describes version 0.02 of App::PMUtils (from Perl
+    This document describes version 0.03 of App::PMUtils (from Perl
     distribution App-PMUtils), released on 2014-06-24.
 
 SYNOPSIS
@@ -14,6 +14,8 @@ SYNOPSIS
      pmless
      pmedit
      pmcost
+     pmdoc
+     pmman
 
 HOMEPAGE
     Please visit the project's homepage at

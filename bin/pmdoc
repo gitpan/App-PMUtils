@@ -10,9 +10,15 @@ our $DATE = '2014-06-24'; # DATE
 our $VERSION = '0.03'; # VERSION
 
 our %SPEC;
-$SPEC{pmless} = {
+$SPEC{pmdoc} = {
     v => 1.1,
-    summary => 'Show Perl module source code with `less`',
+    summary => 'Show documentation of Perl module',
+    description => <<'_',
+
+This function executes `perldoc`. Basically what it offers is command-line
+completion.
+
+_
     args => {
         module => {
             schema => 'str*',
@@ -26,7 +32,7 @@ $SPEC{pmless} = {
                     completion => Complete::Module::complete_module(
                         word      => $args{word},
                         find_pmc  => 0,
-                        find_pod  => 0,
+                        find_pod  => 1,
                         separator => '/',
                     )
                 );
@@ -34,27 +40,23 @@ $SPEC{pmless} = {
         },
     },
     deps => {
-        prog => 'less',
+        prog => 'perldoc',
     },
 };
-sub pmless {
+sub pmdoc {
     require SHARYANTO::Module::Path;
     my %args = @_;
     my $mod = $args{module};
-    my $mpath = SHARYANTO::Module::Path::module_path(
-        module => $mod, find_pmc=>0, find_pod=>0, find_prefix=>0);
-    if (defined $mpath) {
-        system "less", $mpath;
-        [200, "OK"];
-    } else {
-        [404, "Can't find module $mod"];
-    }
+    $mod =~ s!/!::!g;
+    my @cmd = ("perldoc", $mod);
+    exec @cmd;
+    # [200]; # unreachable
 }
 
-Perinci::CmdLine->new(url => '/main/pmless')->run;
+Perinci::CmdLine->new(url => '/main/pmdoc')->run;
 
-# ABSTRACT: Show Perl module source code with `less`
-# PODNAME: pmless
+# ABSTRACT: Show documentation of Perl module
+# PODNAME: pmdoc
 
 __END__
 
@@ -64,22 +66,22 @@ __END__
 
 =head1 NAME
 
-pmless - Show Perl module source code with `less`
+pmdoc - Show documentation of Perl module
 
 =head1 VERSION
 
-This document describes version 0.03 of pmless (from Perl distribution App-PMUtils), released on 2014-06-24.
+This document describes version 0.03 of pmdoc (from Perl distribution App-PMUtils), released on 2014-06-24.
 
 =head1 SYNOPSIS
 
 Basic usage:
 
- % pmless Some::Module
+ % pmdoc Some::Module
 
 To active bash completion:
 
- % complete -C pmpath pmpath ; # can be put in bash startup file e.g. .bashrc
- % pmpath Some<tab>
+ % complete -C pmdoc pmdoc ; # can be put in bash startup file e.g. .bashrc
+ % pmdoc Some<tab>
 
 =head1 KNOWN ISSUES
 
