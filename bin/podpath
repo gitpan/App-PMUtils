@@ -1,0 +1,75 @@
+#!/usr/bin/env perl
+
+use 5.010;
+use strict;
+use warnings;
+
+use SHARYANTO::Module::Path; # so it's detected by lint-prereqs
+use Perinci::CmdLine 1.04;
+
+our $VERSION = '0.01'; # VERSION
+our $DATE = '2014-06-24'; # DATE
+
+Perinci::CmdLine->new(url => '/SHARYANTO/Module/Path/pod_path')->run;
+
+# ABSTRACT: Get path to locally installed POD
+# PODNAME: podpath
+
+__END__
+
+=pod
+
+=encoding UTF-8
+
+=head1 NAME
+
+podpath - Get path to locally installed POD
+
+=head1 VERSION
+
+This document describes version 0.01 of podpath (from Perl distribution App-PMUtils), released on 2014-06-24.
+
+=head1 SYNOPSIS
+
+Basic usage:
+
+ % podpath PSGI
+
+To active bash completion:
+
+ % complete -C podpath podpath; # can be put in bash startup file e.g. .bashrc
+ % pod PSG<tab>
+
+=head1 KNOWN ISSUES
+
+Tab completion uses C</> instead of C<::> due issue with how bash treats C<:>
+during completion.
+
+=head1 HOMEPAGE
+
+Please visit the project's homepage at L<https://metacpan.org/release/App-PMUtils>.
+
+=head1 SOURCE
+
+Source repository is at L<https://github.com/sharyanto/perl-App-PMUtils>.
+
+=head1 BUGS
+
+Please report any bugs or feature requests on the bugtracker website L<https://rt.cpan.org/Public/Dist/Display.html?Name=App-PMUtils>
+
+When submitting a bug or request, please include a test-file or a
+patch to an existing test-file that illustrates the bug or desired
+feature.
+
+=head1 AUTHOR
+
+Steven Haryanto <stevenharyanto@gmail.com>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2014 by Steven Haryanto.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut
