@@ -4,7 +4,7 @@ use 5.010001;
 use strict;
 use warnings;
 
-our $VERSION = '0.01'; # VERSION
+our $VERSION = '0.02'; # VERSION
 our $DATE = '2014-06-24'; # DATE
 
 1;
@@ -22,16 +22,18 @@ App::PMUtils - Command line to manipulate Perl module files
 
 =head1 VERSION
 
-This document describes version 0.01 of App::PMUtils (from Perl distribution App-PMUtils), released on 2014-06-24.
+This document describes version 0.02 of App::PMUtils (from Perl distribution App-PMUtils), released on 2014-06-24.
 
 =head1 SYNOPSIS
 
 This distribution provides the following command-line utilities:
 
+ pminfo
  pmpath
  podpath
  pmless
  pmedit
+ pmcost
 
 =head1 HOMEPAGE
 

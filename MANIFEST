@@ -6,7 +6,9 @@ META.json
 META.yml
 Makefile.PL
 README
+bin/pmcost
 bin/pmedit
+bin/pminfo
 bin/pmless
 bin/pmpath
 bin/podpath
