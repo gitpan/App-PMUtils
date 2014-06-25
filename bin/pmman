@@ -6,8 +6,8 @@ use warnings;
 
 use Perinci::CmdLine 1.04;
 
-our $DATE = '2014-06-24'; # DATE
-our $VERSION = '0.04'; # VERSION
+our $DATE = '2014-06-25'; # DATE
+our $VERSION = '0.05'; # VERSION
 
 our %SPEC;
 $SPEC{pmman} = {
@@ -25,9 +25,9 @@ _
             pos => 0,
             completion => sub {
                 require Complete::Module;
-                require SHARYANTO::Complete::Util;
+                require Complete::Util;
                 my %args = @_;
-                SHARYANTO::Complete::Util::mimic_shell_dir_completion(
+                Complete::Util::mimic_shell_dir_completion(
                     completion => Complete::Module::complete_module(
                         word      => $args{word},
                         find_pmc  => 0,
@@ -69,7 +69,7 @@ pmman - Show manpage of Perl module
 
 =head1 VERSION
 
-This document describes version 0.04 of pmman (from Perl distribution App-PMUtils), released on 2014-06-24.
+This document describes version 0.05 of pmman (from Perl distribution App-PMUtils), released on 2014-06-25.
 
 =head1 SYNOPSIS
 

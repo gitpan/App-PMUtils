@@ -7,8 +7,8 @@ use warnings;
 use SHARYANTO::Module::Path; # so it's detected by lint-prereqs
 use Perinci::CmdLine 1.04;
 
-our $DATE = '2014-06-24'; # DATE
-our $VERSION = '0.04'; # VERSION
+our $DATE = '2014-06-25'; # DATE
+our $VERSION = '0.05'; # VERSION
 
 Perinci::CmdLine->new(url => '/SHARYANTO/Module/Path/module_path')->run;
 
@@ -27,7 +27,7 @@ pmpath - Get path to locally installed Perl module
 
 =head1 VERSION
 
-This document describes version 0.04 of pmpath (from Perl distribution App-PMUtils), released on 2014-06-24.
+This document describes version 0.05 of pmpath (from Perl distribution App-PMUtils), released on 2014-06-25.
 
 =head1 SYNOPSIS
 
