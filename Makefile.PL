@@ -20,6 +20,7 @@ my %WriteMakefileArgs = (
     "bin/pmless",
     "bin/pmdoc",
     "bin/pmcost",
+    "bin/pmless-colon",
     "bin/pminfo",
     "bin/pmman",
     "bin/podpath",
@@ -42,7 +43,7 @@ my %WriteMakefileArgs = (
     "IPC::Open3" => 0,
     "Test::More" => 0
   },
-  "VERSION" => "0.06",
+  "VERSION" => "0.07",
   "test" => {
     "TESTS" => "t/*.t"
   }

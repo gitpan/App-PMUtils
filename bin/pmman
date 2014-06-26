@@ -7,7 +7,7 @@ use warnings;
 use Perinci::CmdLine 1.04;
 
 our $DATE = '2014-06-26'; # DATE
-our $VERSION = '0.06'; # VERSION
+our $VERSION = '0.07'; # VERSION
 
 our %SPEC;
 $SPEC{pmman} = {
@@ -70,7 +70,7 @@ pmman - Show manpage of Perl module
 
 =head1 VERSION
 
-This document describes version 0.06 of pmman (from Perl distribution App-PMUtils), released on 2014-06-26.
+This document describes version 0.07 of pmman (from Perl distribution App-PMUtils), released on 2014-06-26.
 
 =head1 SYNOPSIS
 
@@ -82,11 +82,6 @@ To active bash completion:
 
  % complete -C pmman pmman ; # can be put in bash startup file e.g. .bashrc
  % pmman Some<tab>
-
-=head1 KNOWN ISSUES
-
-Tab completion uses C</> instead of C<::> due issue with how bash treats C<:>
-during completion.
 
 =head1 HOMEPAGE
 

@@ -7,7 +7,7 @@ use warnings;
 use SHARYANTO::Module::Path; # so it's detected by lint-prereqs
 use Perinci::CmdLine 1.04;
 
-our $VERSION = '0.06'; # VERSION
+our $VERSION = '0.07'; # VERSION
 our $DATE = '2014-06-26'; # DATE
 
 Perinci::CmdLine->new(url => '/SHARYANTO/Module/Path/pod_path')->run;
@@ -27,7 +27,7 @@ podpath - Get path to locally installed POD
 
 =head1 VERSION
 
-This document describes version 0.06 of podpath (from Perl distribution App-PMUtils), released on 2014-06-26.
+This document describes version 0.07 of podpath (from Perl distribution App-PMUtils), released on 2014-06-26.
 
 =head1 SYNOPSIS
 
@@ -38,12 +38,7 @@ Basic usage:
 To active bash completion:
 
  % complete -C podpath podpath; # can be put in bash startup file e.g. .bashrc
- % pod PSG<tab>
-
-=head1 KNOWN ISSUES
-
-Tab completion uses C</> instead of C<::> due issue with how bash treats C<:>
-during completion.
+ % podpath PSG<tab>
 
 =head1 HOMEPAGE
 

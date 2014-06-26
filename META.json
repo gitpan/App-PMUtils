@@ -59,7 +59,7 @@
          "web" : "https://github.com/sharyanto/perl-App-PMUtils"
       }
    },
-   "version" : "0.06",
+   "version" : "0.07",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.018002"
