@@ -29,7 +29,7 @@ my %WriteMakefileArgs = (
   "LICENSE" => "perl",
   "NAME" => "App::PMUtils",
   "PREREQ_PM" => {
-    "Complete::Module" => "0.02",
+    "Complete::Module" => "0.03",
     "Complete::Util" => 0,
     "Log::Any" => 0,
     "Perinci::CmdLine" => "1.04",
@@ -42,7 +42,7 @@ my %WriteMakefileArgs = (
     "IPC::Open3" => 0,
     "Test::More" => 0
   },
-  "VERSION" => "0.05",
+  "VERSION" => "0.06",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -50,7 +50,7 @@ my %WriteMakefileArgs = (
 
 
 my %FallbackPrereqs = (
-  "Complete::Module" => "0.02",
+  "Complete::Module" => "0.03",
   "Complete::Util" => 0,
   "File::Spec" => 0,
   "IO::Handle" => 0,

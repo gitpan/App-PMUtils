@@ -4,8 +4,8 @@ use 5.010001;
 use strict;
 use warnings;
 
-our $VERSION = '0.05'; # VERSION
-our $DATE = '2014-06-25'; # DATE
+our $VERSION = '0.06'; # VERSION
+our $DATE = '2014-06-26'; # DATE
 
 1;
 # ABSTRACT: Command line to manipulate Perl module files
@@ -22,7 +22,7 @@ App::PMUtils - Command line to manipulate Perl module files
 
 =head1 VERSION
 
-This document describes version 0.05 of App::PMUtils (from Perl distribution App-PMUtils), released on 2014-06-25.
+This document describes version 0.06 of App::PMUtils (from Perl distribution App-PMUtils), released on 2014-06-26.
 
 =head1 SYNOPSIS
 
