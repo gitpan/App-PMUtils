@@ -4,13 +4,26 @@ use 5.010;
 use strict;
 use warnings;
 
-use SHARYANTO::Module::Path; # so it's detected by lint-prereqs
+use App::PMUtils;
 use Perinci::CmdLine 1.04;
+use Perinci::Sub::Util qw(gen_modified_sub);
+use SHARYANTO::Module::Path;
 
-our $DATE = '2014-06-26'; # DATE
-our $VERSION = '0.07'; # VERSION
+our $DATE = '2014-06-27'; # DATE
+our $VERSION = '0.08'; # VERSION
 
-Perinci::CmdLine->new(url => '/SHARYANTO/Module/Path/module_path')->run;
+gen_modified_sub(
+    output_name => 'pmpath',
+    base_name   => 'SHARYANTO::Module::Path::module_path',
+    modify_args => {
+        module => sub {
+            my $as = shift;
+            $as->{completion} = $App::PMUtils::_complete_module;
+        },
+    },
+);
+
+Perinci::CmdLine->new(url => '/main/pmpath')->run;
 
 # ABSTRACT: Get path to locally installed Perl module
 # PODNAME: pmpath
@@ -27,7 +40,7 @@ pmpath - Get path to locally installed Perl module
 
 =head1 VERSION
 
-This document describes version 0.07 of pmpath (from Perl distribution App-PMUtils), released on 2014-06-26.
+This document describes version 0.08 of pmpath (from Perl distribution App-PMUtils), released on 2014-06-27.
 
 =head1 SYNOPSIS
 

@@ -4,8 +4,53 @@ use 5.010001;
 use strict;
 use warnings;
 
-our $VERSION = '0.07'; # VERSION
-our $DATE = '2014-06-26'; # DATE
+our $VERSION = '0.08'; # VERSION
+our $DATE = '2014-06-27'; # DATE
+
+our $_complete_module = sub {
+    require Complete::Module;
+    require Complete::Util;
+    my %args = @_;
+
+    my $word = $args{word} // '';
+
+    # convenience, convert all non-alphanums to ::, so you can type e.g. foo.bar
+    # or foo-bar and they will be converted to foo::bar
+    $word =~ s/\W+/::/g;
+
+    Complete::Util::mimic_shell_dir_completion(
+        completion => Complete::Module::complete_module(
+            word      => $word,
+            find_pmc  => 0,
+            find_pod  => 0,
+            separator => '/',
+            ci        => 1, # convenience
+        )
+    );
+};
+
+our $_complete_pod = sub {
+    require Complete::Module;
+    require Complete::Util;
+    my %args = @_;
+
+    my $word = $args{word} // '';
+
+    # convenience, convert all non-alphanums to ::, so you can type e.g. foo.bar
+    # or foo-bar and they will be converted to foo::bar
+    $word =~ s/\W+/::/g;
+
+    Complete::Util::mimic_shell_dir_completion(
+        completion => Complete::Module::complete_module(
+            word      => $word,
+            find_pm   => 0,
+            find_pmc  => 0,
+            find_pod  => 1,
+            separator => '/',
+            ci        => 1, # convenience
+        )
+    );
+};
 
 1;
 # ABSTRACT: Command line to manipulate Perl module files
@@ -22,7 +67,7 @@ App::PMUtils - Command line to manipulate Perl module files
 
 =head1 VERSION
 
-This document describes version 0.07 of App::PMUtils (from Perl distribution App-PMUtils), released on 2014-06-26.
+This document describes version 0.08 of App::PMUtils (from Perl distribution App-PMUtils), released on 2014-06-27.
 
 =head1 SYNOPSIS
 
