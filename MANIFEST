@@ -11,7 +11,6 @@ bin/pmdoc
 bin/pmedit
 bin/pminfo
 bin/pmless
-bin/pmless-colon
 bin/pmman
 bin/pmpath
 bin/podpath

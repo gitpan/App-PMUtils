@@ -4,7 +4,7 @@ use warnings;
 
 # this test was generated with Dist::Zilla::Plugin::Test::Compile 2.040
 
-use Test::More  tests => 10 + ($ENV{AUTHOR_TESTING} ? 1 : 0);
+use Test::More  tests => 9 + ($ENV{AUTHOR_TESTING} ? 1 : 0);
 
 
 
@@ -18,7 +18,6 @@ my @scripts = (
     'bin/pmedit',
     'bin/pminfo',
     'bin/pmless',
-    'bin/pmless-colon',
     'bin/pmman',
     'bin/pmpath',
     'bin/podpath'

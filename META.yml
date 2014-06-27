@@ -29,7 +29,7 @@ resources:
   bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=App-PMUtils
   homepage: https://metacpan.org/release/App-PMUtils
   repository: git://github.com/sharyanto/perl-App-PMUtils.git
-version: '0.08'
+version: '0.09'
 x_Dist_Zilla:
   perl:
     version: '5.018002'
