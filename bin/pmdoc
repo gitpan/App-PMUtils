@@ -8,7 +8,7 @@ use App::PMUtils;
 use Perinci::CmdLine 1.04;
 
 our $DATE = '2014-06-27'; # DATE
-our $VERSION = '0.09'; # VERSION
+our $VERSION = '0.10'; # VERSION
 
 our %SPEC;
 $SPEC{pmdoc} = {
@@ -41,7 +41,10 @@ sub pmdoc {
     # [200]; # unreachable
 }
 
-Perinci::CmdLine->new(url => '/main/pmdoc')->run;
+Perinci::CmdLine->new(
+    log_any_app => 0,
+    url => '/main/pmdoc',
+)->run;
 
 # ABSTRACT: Show documentation of Perl module
 # PODNAME: pmdoc
@@ -58,7 +61,7 @@ pmdoc - Show documentation of Perl module
 
 =head1 VERSION
 
-This document describes version 0.09 of pmdoc (from Perl distribution App-PMUtils), released on 2014-06-27.
+This document describes version 0.10 of pmdoc (from Perl distribution App-PMUtils), released on 2014-06-27.
 
 =head1 SYNOPSIS
 

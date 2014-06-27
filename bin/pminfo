@@ -9,7 +9,7 @@ use App::PMUtils;
 use Perinci::CmdLine 1.04;
 
 our $DATE = '2014-06-27'; # DATE
-our $VERSION = '0.09'; # VERSION
+our $VERSION = '0.10'; # VERSION
 
 our %SPEC;
 $SPEC{pminfo} = {
@@ -67,7 +67,10 @@ sub pminfo {
     $res;
 }
 
-Perinci::CmdLine->new(url => '/main/pminfo')->run;
+Perinci::CmdLine->new(
+    log_any_app => 0,
+    url => '/main/pminfo',
+)->run;
 
 # ABSTRACT: Get Perl module information
 # PODNAME: pminfo
@@ -84,7 +87,7 @@ pminfo - Get Perl module information
 
 =head1 VERSION
 
-This document describes version 0.09 of pminfo (from Perl distribution App-PMUtils), released on 2014-06-27.
+This document describes version 0.10 of pminfo (from Perl distribution App-PMUtils), released on 2014-06-27.
 
 =head1 SYNOPSIS
 
