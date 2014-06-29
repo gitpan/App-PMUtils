@@ -4,8 +4,8 @@ use 5.010001;
 use strict;
 use warnings;
 
-our $VERSION = '0.10'; # VERSION
-our $DATE = '2014-06-27'; # DATE
+our $VERSION = '0.11'; # VERSION
+our $DATE = '2014-06-29'; # DATE
 
 our $_complete_module = sub {
     require Complete::Module;
@@ -14,19 +14,22 @@ our $_complete_module = sub {
 
     my $word = $args{word} // '';
 
-    # convenience, convert all non-alphanums to ::, so you can type e.g. foo.bar
-    # or foo-bar and they will be converted to foo::bar
+    # compromise, if word doesn't contain :: we use the safer separator /, but
+    # if already contains '::' we use '::' (but this means in bash user needs to
+    # use quote (' or ") to make completion behave as expected since : is a word
+    # break character in bash/readline.
+    my $sep = $word =~ /::/ ? '::' : '/';
     $word =~ s/\W+/::/g;
 
     Complete::Util::mimic_shell_dir_completion(
-        completion => Complete::Module::complete_module(
+        Complete::Module::complete_module(
             word      => $word,
             find_pmc  => 0,
             find_pod  => 0,
-            separator => '/',
+            separator => $sep,
             ci        => 1, # convenience
         )
-    );
+      );
 };
 
 our $_complete_pod = sub {
@@ -36,12 +39,11 @@ our $_complete_pod = sub {
 
     my $word = $args{word} // '';
 
-    # convenience, convert all non-alphanums to ::, so you can type e.g. foo.bar
-    # or foo-bar and they will be converted to foo::bar
+    my $sep = $word =~ /::/ ? '::' : '/';
     $word =~ s/\W+/::/g;
 
     Complete::Util::mimic_shell_dir_completion(
-        completion => Complete::Module::complete_module(
+        Complete::Module::complete_module(
             word      => $word,
             find_pm   => 0,
             find_pmc  => 0,
@@ -49,7 +51,7 @@ our $_complete_pod = sub {
             separator => '/',
             ci        => 1, # convenience
         )
-    );
+      );
 };
 
 1;
@@ -67,7 +69,7 @@ App::PMUtils - Command line to manipulate Perl module files
 
 =head1 VERSION
 
-This document describes version 0.10 of App::PMUtils (from Perl distribution App-PMUtils), released on 2014-06-27.
+This document describes version 0.11 of App::PMUtils (from Perl distribution App-PMUtils), released on 2014-06-29.
 
 =head1 SYNOPSIS
 
@@ -94,11 +96,10 @@ typing.
 
 =head2 In shell completion, why do you use / (slash) instead of :: (double colon) as it should be?
 
+If you type module name which doesn't contain any ::, / will be used as
+namespace separator. Otherwise if you already type ::, it will use ::.
+
 Colon is problematic because by default it is a word breaking character in bash.
-Here's my default COMP_WORDBREAKS:
-
- "'@><=;|&(:
-
 This means, in this command:
 
  % pmpath Text:<tab>
@@ -109,8 +110,12 @@ bash is completing a new word (empty string), and in this:
 
 bash is completing C<ANSITabl> instead of what we want C<Text::ANSITabl>.
 
-So the workaround, instead of telling users to modify their COMP_WORDBREAKS
-setting, is to use another character for the module separator (C</>).
+The solution is to use quotes, e.g.
+
+ % pmpath "Text:
+ % pmpath 'Text:
+
+or, use /.
 
 =head1 HOMEPAGE
 

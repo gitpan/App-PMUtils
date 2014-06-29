@@ -2,8 +2,8 @@ NAME
     App::PMUtils - Command line to manipulate Perl module files
 
 VERSION
-    This document describes version 0.10 of App::PMUtils (from Perl
-    distribution App-PMUtils), released on 2014-06-27.
+    This document describes version 0.11 of App::PMUtils (from Perl
+    distribution App-PMUtils), released on 2014-06-29.
 
 SYNOPSIS
     This distribution provides the following command-line utilities:
@@ -26,12 +26,11 @@ FAQ
     save typing.
 
   In shell completion, why do you use / (slash) instead of :: (double colon) as it should be?
+    If you type module name which doesn't contain any ::, / will be used as
+    namespace separator. Otherwise if you already type ::, it will use ::.
+
     Colon is problematic because by default it is a word breaking character
-    in bash. Here's my default COMP_WORDBREAKS:
-
-     "'@><=;|&(:
-
-    This means, in this command:
+    in bash. This means, in this command:
 
      % pmpath Text:<tab>
 
@@ -41,9 +40,12 @@ FAQ
 
     bash is completing "ANSITabl" instead of what we want "Text::ANSITabl".
 
-    So the workaround, instead of telling users to modify their
-    COMP_WORDBREAKS setting, is to use another character for the module
-    separator ("/").
+    The solution is to use quotes, e.g.
+
+     % pmpath "Text:
+     % pmpath 'Text:
+
+    or, use /.
 
 HOMEPAGE
     Please visit the project's homepage at
