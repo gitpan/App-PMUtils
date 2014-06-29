@@ -9,7 +9,7 @@ use App::PMUtils;
 use Perinci::CmdLine 1.13;
 
 our $DATE = '2014-06-29'; # DATE
-our $VERSION = '0.13'; # VERSION
+our $VERSION = '0.14'; # VERSION
 
 our %SPEC;
 $SPEC{pmversion} = {
@@ -26,9 +26,9 @@ _
             element_completion => $App::PMUtils::_complete_module,
         },
     },
-    result_naked => 1,
+    "x.perinci.cmdline.default_format" => 'text-simple',
 };
-sub pminfo {
+sub pmversion {
     require Module::Load;
     require SHARYANTO::Module::Path;
 
@@ -40,7 +40,6 @@ sub pminfo {
     for my $mod (@$mods) {
         $mod =~ s!/!::!g;
         my $mpath = SHARYANTO::Module::Path::module_path(module=>$mod);
-        $rec->{path} = $mpath;
         unless ($mpath) {
             push @$res, "Module $mod is not installed";
             next;
@@ -60,7 +59,7 @@ sub pminfo {
     }
 
     if (!$found) {
-        [404, "No such module: " . join(", "@$mods)];
+        [404, "No such module: " . join(", ", @$mods)];
     } else {
         [200, "OK", $res];
     }
@@ -86,7 +85,7 @@ pmversion - Get Perl module version
 
 =head1 VERSION
 
-This document describes version 0.13 of pmversion (from Perl distribution App-PMUtils), released on 2014-06-29.
+This document describes version 0.14 of pmversion (from Perl distribution App-PMUtils), released on 2014-06-29.
 
 =head1 SYNOPSIS
 
