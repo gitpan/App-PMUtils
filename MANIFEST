@@ -13,6 +13,7 @@ bin/pminfo
 bin/pmless
 bin/pmman
 bin/pmpath
+bin/pmversion
 bin/podpath
 dist.ini
 lib/App/PMUtils.pm

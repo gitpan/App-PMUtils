@@ -5,10 +5,10 @@ use strict;
 use warnings;
 
 use App::PMUtils;
-use Perinci::CmdLine 1.04;
+use Perinci::CmdLine 1.13;
 
 our $DATE = '2014-06-29'; # DATE
-our $VERSION = '0.12'; # VERSION
+our $VERSION = '0.13'; # VERSION
 
 our %SPEC;
 $SPEC{pmdoc} = {
@@ -61,7 +61,7 @@ pmdoc - Show documentation of Perl module
 
 =head1 VERSION
 
-This document describes version 0.12 of pmdoc (from Perl distribution App-PMUtils), released on 2014-06-29.
+This document describes version 0.13 of pmdoc (from Perl distribution App-PMUtils), released on 2014-06-29.
 
 =head1 SYNOPSIS
 

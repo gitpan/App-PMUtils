@@ -18,6 +18,7 @@ my %WriteMakefileArgs = (
   "DISTNAME" => "App-PMUtils",
   "EXE_FILES" => [
     "bin/pmless",
+    "bin/pmversion",
     "bin/pminfo",
     "bin/podpath",
     "bin/pmdoc",
@@ -30,9 +31,9 @@ my %WriteMakefileArgs = (
   "NAME" => "App::PMUtils",
   "PREREQ_PM" => {
     "Complete::Module" => "0.03",
-    "Complete::Util" => "0.10",
     "Log::Any" => 0,
-    "Perinci::CmdLine" => "1.04",
+    "Perinci::CmdLine" => "1.13",
+    "Rinci" => "v1.1.52",
     "SHARYANTO::Module::Path" => 0,
     "String::ShellQuote" => 0
   },
@@ -42,7 +43,7 @@ my %WriteMakefileArgs = (
     "IPC::Open3" => 0,
     "Test::More" => 0
   },
-  "VERSION" => "0.12",
+  "VERSION" => "0.13",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -51,12 +52,12 @@ my %WriteMakefileArgs = (
 
 my %FallbackPrereqs = (
   "Complete::Module" => "0.03",
-  "Complete::Util" => "0.10",
   "File::Spec" => 0,
   "IO::Handle" => 0,
   "IPC::Open3" => 0,
   "Log::Any" => 0,
-  "Perinci::CmdLine" => "1.04",
+  "Perinci::CmdLine" => "1.13",
+  "Rinci" => "v1.1.52",
   "SHARYANTO::Module::Path" => 0,
   "String::ShellQuote" => 0,
   "Test::More" => 0

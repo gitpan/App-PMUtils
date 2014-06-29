@@ -4,12 +4,11 @@ use 5.010001;
 use strict;
 use warnings;
 
-our $VERSION = '0.12'; # VERSION
+our $VERSION = '0.13'; # VERSION
 our $DATE = '2014-06-29'; # DATE
 
 our $_complete_module = sub {
     require Complete::Module;
-    require Complete::Util;
     my %args = @_;
 
     my $word = $args{word} // '';
@@ -21,20 +20,23 @@ our $_complete_module = sub {
     my $sep = $word =~ /::/ ? '::' : '/';
     $word =~ s/\W+/::/g;
 
-    Complete::Util::mimic_shell_dir_completion(
-        Complete::Module::complete_module(
+    my $shcomp = {};
+
+    {
+        completion => Complete::Module::complete_module(
             word      => $word,
             find_pmc  => 0,
             find_pod  => 0,
             separator => $sep,
             ci        => 1, # convenience
-        )
-      );
+        ),
+        is_path    => 1,
+        path_sep   => $sep,
+    };
 };
 
 our $_complete_pod = sub {
     require Complete::Module;
-    require Complete::Util;
     my %args = @_;
 
     my $word = $args{word} // '';
@@ -42,16 +44,18 @@ our $_complete_pod = sub {
     my $sep = $word =~ /::/ ? '::' : '/';
     $word =~ s/\W+/::/g;
 
-    Complete::Util::mimic_shell_dir_completion(
-        Complete::Module::complete_module(
+    {
+        completion => Complete::Module::complete_module(
             word      => $word,
             find_pm   => 0,
             find_pmc  => 0,
             find_pod  => 1,
             separator => '/',
             ci        => 1, # convenience
-        )
-      );
+        ),
+        is_path    => 1,
+        path_sep   => $sep,
+    };
 };
 
 1;
@@ -69,13 +73,14 @@ App::PMUtils - Command line to manipulate Perl module files
 
 =head1 VERSION
 
-This document describes version 0.12 of App::PMUtils (from Perl distribution App-PMUtils), released on 2014-06-29.
+This document describes version 0.13 of App::PMUtils (from Perl distribution App-PMUtils), released on 2014-06-29.
 
 =head1 SYNOPSIS
 
 This distribution provides the following command-line utilities:
 
  pminfo
+ pmversion
  pmpath
  podpath
  pmless
