@@ -2,8 +2,8 @@ NAME
     App::PMUtils - Command line to manipulate Perl module files
 
 VERSION
-    This document describes version 0.14 of App::PMUtils (from Perl
-    distribution App-PMUtils), released on 2014-06-29.
+    This document describes version 0.15 of App::PMUtils (from Perl
+    distribution App-PMUtils), released on 2014-07-02.
 
 SYNOPSIS
     This distribution provides the following command-line utilities:
@@ -23,8 +23,8 @@ FAQ
     For example, mpath in Module::Path distribution, mversion in
     Module::Version distribution, etc.
 
-    True. The main point of these utilities are shell tab completion, to
-    save typing.
+    True. The main point of these utilities is shell tab completion, to save
+    typing.
 
   In shell completion, why do you use / (slash) instead of :: (double colon) as it should be?
     If you type module name which doesn't contain any ::, / will be used as
@@ -43,8 +43,8 @@ FAQ
 
     The solution is to use quotes, e.g.
 
-     % pmpath "Text:
-     % pmpath 'Text:
+     % pmpath "Text:<tab>
+     % pmpath 'Text:<tab>
 
     or, use /.
 

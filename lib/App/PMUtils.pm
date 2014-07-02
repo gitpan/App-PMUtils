@@ -4,8 +4,8 @@ use 5.010001;
 use strict;
 use warnings;
 
-our $VERSION = '0.14'; # VERSION
-our $DATE = '2014-06-29'; # DATE
+our $VERSION = '0.15'; # VERSION
+our $DATE = '2014-07-02'; # DATE
 
 our $_complete_module = sub {
     require Complete::Module;
@@ -73,7 +73,7 @@ App::PMUtils - Command line to manipulate Perl module files
 
 =head1 VERSION
 
-This document describes version 0.14 of App::PMUtils (from Perl distribution App-PMUtils), released on 2014-06-29.
+This document describes version 0.15 of App::PMUtils (from Perl distribution App-PMUtils), released on 2014-07-02.
 
 =head1 SYNOPSIS
 
@@ -96,7 +96,7 @@ This distribution provides the following command-line utilities:
 For example, L<mpath> in L<Module::Path> distribution, L<mversion> in
 L<Module::Version> distribution, etc.
 
-True. The main point of these utilities are shell tab completion, to save
+True. The main point of these utilities is shell tab completion, to save
 typing.
 
 =head2 In shell completion, why do you use / (slash) instead of :: (double colon) as it should be?
@@ -117,8 +117,8 @@ bash is completing C<ANSITabl> instead of what we want C<Text::ANSITabl>.
 
 The solution is to use quotes, e.g.
 
- % pmpath "Text:
- % pmpath 'Text:
+ % pmpath "Text:<tab>
+ % pmpath 'Text:<tab>
 
 or, use /.
 

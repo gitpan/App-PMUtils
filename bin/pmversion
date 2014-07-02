@@ -1,4 +1,4 @@
-#!/usr/bin/env perl
+#!perl
 
 use 5.010;
 use strict;
@@ -8,8 +8,8 @@ use Log::Any '$log';
 use App::PMUtils;
 use Perinci::CmdLine 1.13;
 
-our $DATE = '2014-06-29'; # DATE
-our $VERSION = '0.14'; # VERSION
+our $DATE = '2014-07-02'; # DATE
+our $VERSION = '0.15'; # VERSION
 
 our %SPEC;
 $SPEC{pmversion} = {
@@ -59,7 +59,7 @@ sub pmversion {
     }
 
     if (!$found) {
-        [404, "No such module: " . join(", ", @$mods)];
+        [404, "No such module(s): " . join(", ", @$mods)];
     } else {
         [200, "OK", $res];
     }
@@ -85,7 +85,7 @@ pmversion - Get Perl module version
 
 =head1 VERSION
 
-This document describes version 0.14 of pmversion (from Perl distribution App-PMUtils), released on 2014-06-29.
+This document describes version 0.15 of pmversion (from Perl distribution App-PMUtils), released on 2014-07-02.
 
 =head1 SYNOPSIS
 

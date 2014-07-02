@@ -18,14 +18,14 @@ my %WriteMakefileArgs = (
   "DISTNAME" => "App-PMUtils",
   "EXE_FILES" => [
     "bin/pmless",
-    "bin/pmversion",
-    "bin/pminfo",
-    "bin/podpath",
     "bin/pmdoc",
+    "bin/pmcost",
+    "bin/pminfo",
     "bin/pmman",
+    "bin/podpath",
     "bin/pmedit",
     "bin/pmpath",
-    "bin/pmcost"
+    "bin/pmversion"
   ],
   "LICENSE" => "perl",
   "NAME" => "App::PMUtils",
@@ -43,7 +43,7 @@ my %WriteMakefileArgs = (
     "IPC::Open3" => 0,
     "Test::More" => 0
   },
-  "VERSION" => "0.14",
+  "VERSION" => "0.15",
   "test" => {
     "TESTS" => "t/*.t"
   }

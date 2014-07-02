@@ -1,4 +1,4 @@
-#!/usr/bin/env perl
+#!perl
 
 use 5.010;
 use strict;
@@ -7,8 +7,8 @@ use warnings;
 use App::PMUtils;
 use Perinci::CmdLine 1.13;
 
-our $DATE = '2014-06-29'; # DATE
-our $VERSION = '0.14'; # VERSION
+our $DATE = '2014-07-02'; # DATE
+our $VERSION = '0.15'; # VERSION
 
 our %SPEC;
 $SPEC{pmless} = {
@@ -60,7 +60,7 @@ pmless - Show Perl module source code with `less`
 
 =head1 VERSION
 
-This document describes version 0.14 of pmless (from Perl distribution App-PMUtils), released on 2014-06-29.
+This document describes version 0.15 of pmless (from Perl distribution App-PMUtils), released on 2014-07-02.
 
 =head1 SYNOPSIS
 
