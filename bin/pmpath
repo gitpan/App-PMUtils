@@ -8,8 +8,8 @@ use App::PMUtils;
 use Perinci::CmdLine 1.13;
 use SHARYANTO::Module::Path;
 
-our $DATE = '2014-07-02'; # DATE
-our $VERSION = '0.15'; # VERSION
+our $DATE = '2014-07-06'; # DATE
+our $VERSION = '0.16'; # VERSION
 
 our %SPEC;
 $SPEC{pmpath} = {
@@ -77,7 +77,7 @@ pmpath - Get path to locally installed Perl module
 
 =head1 VERSION
 
-This document describes version 0.15 of pmpath (from Perl distribution App-PMUtils), released on 2014-07-02.
+This document describes version 0.16 of pmpath (from Perl distribution App-PMUtils), released on 2014-07-06.
 
 =head1 SYNOPSIS
 
@@ -97,6 +97,8 @@ To active bash completion:
 
  % complete -C pmpath pmpath ; # can be put in bash startup file e.g. .bashrc
  % pmpath Some<tab>
+ % pmpath test/builder/mo<tab> ; # resolve to Test/Builder/Module, can resolve case
+ % pmpath "Text::Abb<tab>      ; # use quote (' or ") if you want to use :: as separator
 
 =head1 HOMEPAGE
 
