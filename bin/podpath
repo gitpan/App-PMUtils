@@ -5,11 +5,11 @@ use strict;
 use warnings;
 
 use App::PMUtils;
-use Perinci::CmdLine 1.13;
+use Perinci::CmdLine::Lite;
 use SHARYANTO::Module::Path;
 
-our $VERSION = '0.16'; # VERSION
-our $DATE = '2014-07-06'; # DATE
+our $VERSION = '0.17'; # VERSION
+our $DATE = '2014-07-18'; # DATE
 
 our %SPEC;
 $SPEC{podpath} = {
@@ -57,8 +57,7 @@ sub podpath {
     }
 }
 
-Perinci::CmdLine->new(
-    log_any_app => 0,
+Perinci::CmdLine::Lite->new(
     url => '/main/podpath',
 )->run;
 
@@ -77,7 +76,7 @@ podpath - Get path to locally installed POD
 
 =head1 VERSION
 
-This document describes version 0.16 of podpath (from Perl distribution App-PMUtils), released on 2014-07-06.
+This document describes version 0.17 of podpath (from Perl distribution App-PMUtils), released on 2014-07-18.
 
 =head1 SYNOPSIS
 

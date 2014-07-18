@@ -2,8 +2,8 @@ NAME
     App::PMUtils - Command line to manipulate Perl module files
 
 VERSION
-    This document describes version 0.16 of App::PMUtils (from Perl
-    distribution App-PMUtils), released on 2014-07-06.
+    This document describes version 0.17 of App::PMUtils (from Perl
+    distribution App-PMUtils), released on 2014-07-18.
 
 SYNOPSIS
     This distribution provides the following command-line utilities:
