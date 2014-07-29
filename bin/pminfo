@@ -8,8 +8,8 @@ use Log::Any '$log';
 use App::PMUtils;
 use Perinci::CmdLine::Lite;
 
-our $DATE = '2014-07-18'; # DATE
-our $VERSION = '0.17'; # VERSION
+our $DATE = '2014-07-29'; # DATE
+our $VERSION = '0.18'; # VERSION
 
 our %SPEC;
 $SPEC{pminfo} = {
@@ -86,7 +86,7 @@ pminfo - Get Perl module information
 
 =head1 VERSION
 
-This document describes version 0.17 of pminfo (from Perl distribution App-PMUtils), released on 2014-07-18.
+This document describes version 0.18 of pminfo (from Perl distribution App-PMUtils), released on 2014-07-29.
 
 =head1 SYNOPSIS
 

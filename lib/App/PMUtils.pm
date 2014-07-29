@@ -4,14 +4,17 @@ use 5.010001;
 use strict;
 use warnings;
 
-our $VERSION = '0.17'; # VERSION
-our $DATE = '2014-07-18'; # DATE
+our $VERSION = '0.18'; # VERSION
+our $DATE = '2014-07-29'; # DATE
 
 our $_complete_module = sub {
     require Complete::Module;
     my %args = @_;
 
     my $word = $args{word} // '';
+
+    # convenience: allow Foo/Bar.{pm,pod,pmc}
+    $word =~ s/\.{pm,pmc,pod}\z//;
 
     # compromise, if word doesn't contain :: we use the safer separator /, but
     # if already contains '::' we use '::' (but this means in bash user needs to
@@ -28,7 +31,6 @@ our $_complete_module = sub {
             separator => $sep,
             ci        => 1, # convenience
         ),
-        is_path    => 1,
         path_sep   => $sep,
     };
 };
@@ -51,7 +53,6 @@ our $_complete_pod = sub {
             separator => '/',
             ci        => 1, # convenience
         ),
-        is_path    => 1,
         path_sep   => $sep,
     };
 };
@@ -71,7 +72,7 @@ App::PMUtils - Command line to manipulate Perl module files
 
 =head1 VERSION
 
-This document describes version 0.17 of App::PMUtils (from Perl distribution App-PMUtils), released on 2014-07-18.
+This document describes version 0.18 of App::PMUtils (from Perl distribution App-PMUtils), released on 2014-07-29.
 
 =head1 SYNOPSIS
 
