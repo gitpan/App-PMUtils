@@ -33,7 +33,7 @@ my %WriteMakefileArgs = (
   "PREREQ_PM" => {
     "Complete::Module" => "0.03",
     "Log::Any" => 0,
-    "Perinci::CmdLine::Lite" => "0.02",
+    "Perinci::CmdLine::Any" => "0.06",
     "Rinci" => "v1.1.52",
     "SHARYANTO::Module::Path" => 0,
     "String::ShellQuote" => 0
@@ -44,7 +44,7 @@ my %WriteMakefileArgs = (
     "IPC::Open3" => 0,
     "Test::More" => 0
   },
-  "VERSION" => "0.19",
+  "VERSION" => "0.20",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -57,7 +57,7 @@ my %FallbackPrereqs = (
   "IO::Handle" => 0,
   "IPC::Open3" => 0,
   "Log::Any" => 0,
-  "Perinci::CmdLine::Lite" => "0.02",
+  "Perinci::CmdLine::Any" => "0.06",
   "Rinci" => "v1.1.52",
   "SHARYANTO::Module::Path" => 0,
   "String::ShellQuote" => 0,
