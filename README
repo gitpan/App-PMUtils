@@ -2,21 +2,22 @@ NAME
     App::PMUtils - Command line to manipulate Perl module files
 
 VERSION
-    This document describes version 0.20 of App::PMUtils (from Perl
-    distribution App-PMUtils), released on 2014-08-16.
+    This document describes version 0.21 of App::PMUtils (from Perl
+    distribution App-PMUtils), released on 2014-08-17.
 
 SYNOPSIS
     This distribution provides the following command-line utilities:
 
-     pminfo
-     pmversion
-     pmpath
-     podpath
-     pmless
-     pmedit
+     pmcore
      pmcost
      pmdoc
+     pmedit
+     pminfo
+     pmless
      pmman
+     pmpath
+     pmversion
+     podpath
 
 FAQ
   What is the purpose of this distribution? Haven't other utilities existed?

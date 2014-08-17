@@ -4,8 +4,8 @@ use 5.010001;
 use strict;
 use warnings;
 
-our $VERSION = '0.20'; # VERSION
-our $DATE = '2014-08-16'; # DATE
+our $VERSION = '0.21'; # VERSION
+our $DATE = '2014-08-17'; # DATE
 
 our $_complete_module = sub {
     require Complete::Module;
@@ -72,21 +72,22 @@ App::PMUtils - Command line to manipulate Perl module files
 
 =head1 VERSION
 
-This document describes version 0.20 of App::PMUtils (from Perl distribution App-PMUtils), released on 2014-08-16.
+This document describes version 0.21 of App::PMUtils (from Perl distribution App-PMUtils), released on 2014-08-17.
 
 =head1 SYNOPSIS
 
 This distribution provides the following command-line utilities:
 
- pminfo
- pmversion
- pmpath
- podpath
- pmless
- pmedit
+ pmcore
  pmcost
  pmdoc
+ pmedit
+ pminfo
+ pmless
  pmman
+ pmpath
+ pmversion
+ podpath
 
 =head1 FAQ
 
