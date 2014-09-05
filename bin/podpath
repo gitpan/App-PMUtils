@@ -8,7 +8,7 @@ use App::PMUtils;
 use Perinci::CmdLine::Any -prefer_lite=>1;
 use SHARYANTO::Module::Path;
 
-our $VERSION = '0.22'; # VERSION
+our $VERSION = '0.23'; # VERSION
 our $DATE = '2014-09-05'; # DATE
 
 our %SPEC;
@@ -76,7 +76,7 @@ podpath - Get path to locally installed POD
 
 =head1 VERSION
 
-This document describes version 0.22 of podpath (from Perl distribution App-PMUtils), released on 2014-09-05.
+This document describes version 0.23 of podpath (from Perl distribution App-PMUtils), released on 2014-09-05.
 
 =head1 SYNOPSIS
 
