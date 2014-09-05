@@ -11,22 +11,23 @@ use ExtUtils::MakeMaker 6.30;
 
 my %WriteMakefileArgs = (
   "ABSTRACT" => "Command line to manipulate Perl module files",
-  "AUTHOR" => "Steven Haryanto <stevenharyanto\@gmail.com>",
+  "AUTHOR" => "perlancar <perlancar\@cpan.org>",
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => "6.30"
   },
   "DISTNAME" => "App-PMUtils",
   "EXE_FILES" => [
+    "bin/pmcore",
     "bin/pmless",
-    "bin/pmversion",
-    "bin/pminfo",
-    "bin/podpath",
     "bin/pmdoc",
+    "bin/pmcost",
+    "bin/pmbin",
+    "bin/pminfo",
     "bin/pmman",
+    "bin/podpath",
     "bin/pmedit",
     "bin/pmpath",
-    "bin/pmcost",
-    "bin/pmcore"
+    "bin/pmversion"
   ],
   "LICENSE" => "perl",
   "NAME" => "App::PMUtils",
@@ -35,6 +36,7 @@ my %WriteMakefileArgs = (
     "Log::Any" => 0,
     "Perinci::CmdLine::Any" => "0.06",
     "Rinci" => "v1.1.52",
+    "SHARYANTO::Dist::Util" => 0,
     "SHARYANTO::Module::Path" => 0,
     "String::ShellQuote" => 0
   },
@@ -44,7 +46,7 @@ my %WriteMakefileArgs = (
     "IPC::Open3" => 0,
     "Test::More" => 0
   },
-  "VERSION" => "0.21",
+  "VERSION" => "0.22",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -59,6 +61,7 @@ my %FallbackPrereqs = (
   "Log::Any" => 0,
   "Perinci::CmdLine::Any" => "0.06",
   "Rinci" => "v1.1.52",
+  "SHARYANTO::Dist::Util" => 0,
   "SHARYANTO::Module::Path" => 0,
   "String::ShellQuote" => 0,
   "Test::More" => 0
