@@ -9,7 +9,7 @@ use App::PMUtils;
 use Perinci::CmdLine::Any -prefer_lite=>1;
 
 our $DATE = '2014-09-05'; # DATE
-our $VERSION = '0.24'; # VERSION
+our $VERSION = '0.25'; # VERSION
 
 our %SPEC;
 $SPEC{pmversion} = {
@@ -84,7 +84,7 @@ pmversion - Get Perl module version
 
 =head1 VERSION
 
-This document describes version 0.24 of pmversion (from Perl distribution App-PMUtils), released on 2014-09-05.
+This document describes version 0.25 of pmversion (from Perl distribution App-PMUtils), released on 2014-09-05.
 
 =head1 SYNOPSIS
 

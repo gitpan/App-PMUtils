@@ -4,7 +4,7 @@ use 5.010001;
 use strict;
 use warnings;
 
-our $VERSION = '0.24'; # VERSION
+our $VERSION = '0.25'; # VERSION
 our $DATE = '2014-09-05'; # DATE
 
 our $_complete_module = sub {
@@ -72,7 +72,7 @@ App::PMUtils - Command line to manipulate Perl module files
 
 =head1 VERSION
 
-This document describes version 0.24 of App::PMUtils (from Perl distribution App-PMUtils), released on 2014-09-05.
+This document describes version 0.25 of App::PMUtils (from Perl distribution App-PMUtils), released on 2014-09-05.
 
 =head1 SYNOPSIS
 
@@ -90,6 +90,16 @@ This distribution provides the following command-line utilities:
  pmpath
  pmversion
  podpath
+
+These utilities have tab completion capability. To activate it, put these lines
+to your bash startup file (e.g. C</etc/bash.bashrc>, C<~/.bash_profile>, or
+C<~/.bashrc>):
+
+ for p in \
+   pmbin pmcore pmcost pmdoc pmedit pminfo pmless pmlist pmman pmpath \
+   pmversion podpath; do
+     complete -C $p $p
+ done
 
 =head1 FAQ
 
