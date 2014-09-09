@@ -9,7 +9,7 @@ use App::PMUtils;
 use Perinci::CmdLine::Any -prefer_lite=>1;
 
 our $DATE = '2014-09-05'; # DATE
-our $VERSION = '0.23'; # VERSION
+our $VERSION = '0.24'; # VERSION
 
 our %SPEC;
 $SPEC{pminfo} = {
@@ -86,7 +86,7 @@ pminfo - Get Perl module information
 
 =head1 VERSION
 
-This document describes version 0.23 of pminfo (from Perl distribution App-PMUtils), released on 2014-09-05.
+This document describes version 0.24 of pminfo (from Perl distribution App-PMUtils), released on 2014-09-05.
 
 =head1 SYNOPSIS
 
@@ -110,7 +110,7 @@ Please visit the project's homepage at L<https://metacpan.org/release/App-PMUtil
 
 =head1 SOURCE
 
-Source repository is at L<https://github.com/perlancar/perl-App-PMUtils>.
+Source repository is at L<https://github.com/sharyanto/perl-App-PMUtils>.
 
 =head1 BUGS
 
