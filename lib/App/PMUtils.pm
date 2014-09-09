@@ -4,8 +4,8 @@ use 5.010001;
 use strict;
 use warnings;
 
-our $VERSION = '0.25'; # VERSION
-our $DATE = '2014-09-05'; # DATE
+our $VERSION = '0.26'; # VERSION
+our $DATE = '2014-09-09'; # DATE
 
 our $_complete_module = sub {
     require Complete::Module;
@@ -72,7 +72,7 @@ App::PMUtils - Command line to manipulate Perl module files
 
 =head1 VERSION
 
-This document describes version 0.25 of App::PMUtils (from Perl distribution App-PMUtils), released on 2014-09-05.
+This document describes version 0.26 of App::PMUtils (from Perl distribution App-PMUtils), released on 2014-09-09.
 
 =head1 SYNOPSIS
 
@@ -88,6 +88,7 @@ This distribution provides the following command-line utilities:
  pmlist
  pmman
  pmpath
+ pmuninst
  pmversion
  podpath
 
@@ -97,7 +98,7 @@ C<~/.bashrc>):
 
  for p in \
    pmbin pmcore pmcost pmdoc pmedit pminfo pmless pmlist pmman pmpath \
-   pmversion podpath; do
+   pmuninst pmversion podpath; do
      complete -C $p $p
  done
 
@@ -140,7 +141,7 @@ Please visit the project's homepage at L<https://metacpan.org/release/App-PMUtil
 
 =head1 SOURCE
 
-Source repository is at L<https://github.com/sharyanto/perl-App-PMUtils>.
+Source repository is at L<https://github.com/perlancar/perl-App-PMUtils>.
 
 =head1 BUGS
 

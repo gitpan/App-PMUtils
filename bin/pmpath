@@ -7,8 +7,8 @@ use warnings;
 use App::PMUtils;
 use Perinci::CmdLine::Any -prefer_lite=>1;
 
-our $DATE = '2014-09-05'; # DATE
-our $VERSION = '0.25'; # VERSION
+our $DATE = '2014-09-09'; # DATE
+our $VERSION = '0.26'; # VERSION
 
 our %SPEC;
 $SPEC{pmpath} = {
@@ -75,7 +75,7 @@ pmpath - Get path to locally installed Perl module
 
 =head1 VERSION
 
-This document describes version 0.25 of pmpath (from Perl distribution App-PMUtils), released on 2014-09-05.
+This document describes version 0.26 of pmpath (from Perl distribution App-PMUtils), released on 2014-09-09.
 
 =head1 SYNOPSIS
 
@@ -104,7 +104,7 @@ Please visit the project's homepage at L<https://metacpan.org/release/App-PMUtil
 
 =head1 SOURCE
 
-Source repository is at L<https://github.com/sharyanto/perl-App-PMUtils>.
+Source repository is at L<https://github.com/perlancar/perl-App-PMUtils>.
 
 =head1 BUGS
 

@@ -3,6 +3,7 @@
 use 5.010;
 use strict;
 use warnings;
+use Log::Any '$log';
 
 use App::PMUtils;
 use Perinci::CmdLine::Any -prefer_lite=>1;
@@ -11,42 +12,40 @@ our $DATE = '2014-09-09'; # DATE
 our $VERSION = '0.26'; # VERSION
 
 our %SPEC;
-$SPEC{pmedit} = {
+$SPEC{pmuninst} = {
     v => 1.1,
-    summary => 'Launch editor for Perl module source code',
+    summary => 'Uninstall an installed Perl module (using pm-uninstall)',
     args => {
         module => {
             schema => 'str*',
-            req => 1,
-            pos => 0,
+            req    => 1,
+            pos    => 0,
             completion => $App::PMUtils::_complete_module,
         },
+        modver => {
+            schema => 'str*',
+            pos    => 1,
+            # XXX complete using Module::Corelist
+        },
+    },
+    result_naked=>1,
+    deps => {
+        {exec=>'pm-uninstall'},
     },
 };
-sub pmedit {
-    require SHARYANTO::Module::Path;
-    require String::ShellQuote;
-
+sub pmuninst {
     my %args = @_;
     my $mod = $args{module};
-    my $mpath = SHARYANTO::Module::Path::module_path(
-        module => $mod, find_pmc=>0, find_pod=>0, find_prefix=>0);
-    return [412, "Please set EDITOR first"] unless defined($ENV{EDITOR});
-    return [500, "Can't find path for $mod"] unless defined $mpath;
-
-    # array variant doesn't always work because $EDITOR can contain args, e.g.
-    # "emacsclient -t".
-    my $cmd = "$ENV{EDITOR} ".String::ShellQuote::shell_quote($mpath);
-    exec $cmd;
-    # [200]; # unreached
+    $mod =~ s/\.pm$//; $mod =~ s!/!::!g; # convenience
+    exec "pm-uninstall", $mod;
 }
 
 Perinci::CmdLine::Any->new(
-    url => '/main/pmedit',
+    url => '/main/pmuninst',
 )->run;
 
-# ABSTRACT: Launch editor for Perl module source code
-# PODNAME: pmedit
+# ABSTRACT: Uninstall an installed Perl module (using pm-uninstall)
+# PODNAME: pmuninst
 
 __END__
 
@@ -56,24 +55,25 @@ __END__
 
 =head1 NAME
 
-pmedit - Launch editor for Perl module source code
+pmuninst - Uninstall an installed Perl module (using pm-uninstall)
 
 =head1 VERSION
 
-This document describes version 0.26 of pmedit (from Perl distribution App-PMUtils), released on 2014-09-09.
+This document describes version 0.26 of pmuninst (from Perl distribution App-PMUtils), released on 2014-09-09.
 
 =head1 SYNOPSIS
 
-Basic usage:
+ % pmuninst App::Stopwatch
 
- % pmedit Some::Module
+See all other options:
+
+ % pmuninst --help
 
 To active bash completion:
 
- % complete -C pmedit pmedit ; # can be put in bash startup file e.g. .bashrc
- % pmedit Some<tab>
- % pmedit test/builder/mo<tab> ; # resolve to Test/Builder/Module, can resolve case
- % pmedit "Text::Abb<tab>      ; # use quote (' or ") if you want to use :: as separator
+ % complete -C pmuninst pmuninst ; # can be put in bash startup file e.g. .bashrc
+ % pmuninst App/<tab>
+ % pmuninst "App::<tab>      ; # use quote (' or ") if you want to use :: as separator
 
 =head1 HOMEPAGE
 

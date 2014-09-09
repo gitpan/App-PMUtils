@@ -2,9 +2,9 @@ use 5.006;
 use strict;
 use warnings;
 
-# this test was generated with Dist::Zilla::Plugin::Test::Compile 2.039
+# this test was generated with Dist::Zilla::Plugin::Test::Compile 2.040
 
-use Test::More  tests => 13 + ($ENV{AUTHOR_TESTING} ? 1 : 0);
+use Test::More  tests => 14 + ($ENV{AUTHOR_TESTING} ? 1 : 0);
 
 
 
@@ -23,6 +23,7 @@ my @scripts = (
     'bin/pmlist',
     'bin/pmman',
     'bin/pmpath',
+    'bin/pmuninst',
     'bin/pmversion',
     'bin/podpath'
 );
