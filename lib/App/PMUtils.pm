@@ -4,7 +4,7 @@ use 5.010001;
 use strict;
 use warnings;
 
-our $VERSION = '0.27'; # VERSION
+our $VERSION = '0.28'; # VERSION
 our $DATE = '2014-09-16'; # DATE
 
 our $_complete_module = sub {
@@ -72,7 +72,7 @@ App::PMUtils - Command-line utilities related to Perl modules
 
 =head1 VERSION
 
-This document describes version 0.27 of App::PMUtils (from Perl distribution App-PMUtils), released on 2014-09-16.
+This document describes version 0.28 of App::PMUtils (from Perl distribution App-PMUtils), released on 2014-09-16.
 
 =head1 SYNOPSIS
 

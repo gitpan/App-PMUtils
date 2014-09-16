@@ -61,7 +61,7 @@
          "web" : "https://github.com/perlancar/perl-App-PMUtils"
       }
    },
-   "version" : "0.27",
+   "version" : "0.28",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.018002"

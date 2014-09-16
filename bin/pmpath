@@ -8,7 +8,7 @@ use App::PMUtils;
 use Perinci::CmdLine::Any -prefer_lite=>1;
 
 our $DATE = '2014-09-16'; # DATE
-our $VERSION = '0.27'; # VERSION
+our $VERSION = '0.28'; # VERSION
 
 our %SPEC;
 $SPEC{pmpath} = {
@@ -74,7 +74,11 @@ sub pmpath {
     if ($found) {
         [200, "OK", $res];
     } else {
-        [404, "No such module"];
+        if ($args{dir}) {
+            [200, "OK (not found)", "."];
+        } else {
+            [404, "No such module"];
+        }
     }
 }
 
@@ -97,7 +101,7 @@ pmpath - Get path to locally installed Perl module
 
 =head1 VERSION
 
-This document describes version 0.27 of pmpath (from Perl distribution App-PMUtils), released on 2014-09-16.
+This document describes version 0.28 of pmpath (from Perl distribution App-PMUtils), released on 2014-09-16.
 
 =head1 SYNOPSIS
 
