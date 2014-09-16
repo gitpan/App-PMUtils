@@ -4,8 +4,8 @@ use 5.010001;
 use strict;
 use warnings;
 
-our $VERSION = '0.26'; # VERSION
-our $DATE = '2014-09-09'; # DATE
+our $VERSION = '0.27'; # VERSION
+our $DATE = '2014-09-16'; # DATE
 
 our $_complete_module = sub {
     require Complete::Module;
@@ -58,7 +58,7 @@ our $_complete_pod = sub {
 };
 
 1;
-# ABSTRACT: Command line to manipulate Perl module files
+# ABSTRACT: Command-line utilities related to Perl modules
 
 __END__
 
@@ -68,11 +68,11 @@ __END__
 
 =head1 NAME
 
-App::PMUtils - Command line to manipulate Perl module files
+App::PMUtils - Command-line utilities related to Perl modules
 
 =head1 VERSION
 
-This document describes version 0.26 of App::PMUtils (from Perl distribution App-PMUtils), released on 2014-09-09.
+This document describes version 0.27 of App::PMUtils (from Perl distribution App-PMUtils), released on 2014-09-16.
 
 =head1 SYNOPSIS
 

@@ -1,5 +1,5 @@
 ---
-abstract: 'Command line to manipulate Perl module files'
+abstract: 'Command-line utilities related to Perl modules'
 author:
   - 'perlancar <perlancar@cpan.org>'
 build_requires:
@@ -30,7 +30,7 @@ resources:
   bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=App-PMUtils
   homepage: https://metacpan.org/release/App-PMUtils
   repository: git://github.com/perlancar/perl-App-PMUtils.git
-version: '0.26'
+version: '0.27'
 x_Dist_Zilla:
   perl:
     version: '5.018002'
@@ -223,7 +223,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Rinci::Validate
       name: '@Author::PERLANCAR/Rinci::Validate'
-      version: '0.14'
+      version: '0.18'
     -
       class: Dist::Zilla::Plugin::SetScriptShebang
       name: '@Author::PERLANCAR/SetScriptShebang'
